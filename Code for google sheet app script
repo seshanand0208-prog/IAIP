@@ -1,0 +1,13 @@
+function doGet(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+
+  var name = e.parameter.name;
+  var roll = e.parameter.roll;
+  var year = e.parameter.year;
+  var dept = e.parameter.dept;
+  var status = e.parameter.status;
+
+  sheet.appendRow([name, roll, year, dept, status]);
+
+  return ContentService.createTextOutput("OK");
+}
